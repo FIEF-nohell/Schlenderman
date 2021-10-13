@@ -5,15 +5,12 @@ using UnityEngine;
 
 public class SpawnOnNavTest : MonoBehaviour
 {
-    public int NumberOfSpawnables;
-    public GameObject Motor;
     public GameObject Breadboard;
     public GameObject Sensor;
     public GameObject Arduino;
     public Vector3 pos1;
     public Vector3 pos2;
     public Vector3 pos3;
-    public Vector3 pos4;
    
     void Start()
     {
@@ -25,12 +22,10 @@ public class SpawnOnNavTest : MonoBehaviour
         pos1 = GetRandomGameBoardLocation();
         pos2 = GetRandomGameBoardLocation();
         pos3 = GetRandomGameBoardLocation();
-        pos4 = GetRandomGameBoardLocation();
 
-        Instantiate(Motor, pos1, Quaternion.identity);
-        Instantiate(Breadboard, pos2, Quaternion.identity);
-        Instantiate(Sensor, pos3, Quaternion.identity);
-        Instantiate(Arduino, pos4, Quaternion.identity);
+        GameObject bread = Instantiate(Breadboard, new Vector3(pos1.x, pos1.y, pos1.z), Quaternion.identity);
+        GameObject sens = Instantiate(Sensor, new Vector3(pos2.x, pos2.y, pos2.z), Quaternion.identity);
+        GameObject ard = Instantiate(Arduino, new Vector3(pos3.x, pos3.y, pos3.z), Quaternion.identity);
     }
     
     private Vector3 GetRandomGameBoardLocation()    
@@ -59,13 +54,6 @@ public class SpawnOnNavTest : MonoBehaviour
             // select a random point on it
             point = Vector3.Lerp(firstVertexPosition, secondVertexPosition, UnityEngine.Random.Range(0.05f, 0.95f));
         }
-
-        Debug.DrawRay(point, point.forward * 10, Color.red, 103f);
-        Debug.DrawRay(point, point.backwards * 10, Color.red, 103f);
-        Debug.DrawRay(point, point.left * 10, Color.red, 103f);
-        Debug.DrawRay(point, point.right * 10, Color.red, 103f);
-        Debug.DrawRay(point, point.up * 10, Color.red, 103f);
-        Debug.DrawRay(point, point.down * 10, Color.red, 103f);
 
         return point;
     }
