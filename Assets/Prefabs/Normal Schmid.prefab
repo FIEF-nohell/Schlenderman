@@ -139,8 +139,9 @@ MonoBehaviour:
   agent: {fileID: 38415115450622969}
   schmid: {fileID: 38415115450622975}
   multiplier: 1
+  FasterForSeconds: 3
   IdleSpeed: 3.2
-  ChaseSpeed: 3.7
+  ChaseSpeed: 4
   rayLength: 100
   rayAngle: 0
   Seen: 0

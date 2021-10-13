@@ -14,8 +14,15 @@ public class UIController : MonoBehaviour
     }
 
     void Update()
-    {
-        Anzeige.text = nummer.ToString() + " / 7 Teile gesammelt";
+    {        
+        if (nummer != 69)
+        {
+            Anzeige.text = nummer.ToString() + " / 7 Teile gesammelt";
+        }
+        else
+        {
+            Anzeige.text = " ";
+        }
     }
 
 }
