@@ -13,13 +13,13 @@ public class SchmidMovement : MonoBehaviour
     public float IdleSpeed;
     public float ChaseSpeed;
     public float rayLength;
+    public float rayAngle;
     public bool Seen;
     
 
     void Update()
     {
-
-        Debug.DrawRay(schmid.transform.position, schmid.transform.forward * rayLength, Color.red, 2.5f);
+        Debug.DrawRay(schmid.transform.position, schmid.transform.forward * rayLength, Color.red, 0.3f);
 
         if(Physics.Raycast(schmid.transform.position, schmid.transform.forward, out ray, rayLength))
         {
