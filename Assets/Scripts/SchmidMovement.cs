@@ -4,7 +4,7 @@ using System.Collections;
 
 public class SchmidMovement : MonoBehaviour
 {
-
+    public LayerMask layerMask;
     public Rigidbody player;
     public NavMeshAgent agent;
     public GameObject schmid;
@@ -19,7 +19,7 @@ public class SchmidMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawRay(schmid.transform.position, schmid.transform.forward * rayLength, Color.red, 0.3f);
+        Debug.DrawRay(schmid.transform.position, schmid.transform.forward * rayLength, Color.red, 10);
 
         if(Physics.Raycast(schmid.transform.position, schmid.transform.forward, out ray, rayLength))
         {
@@ -30,9 +30,9 @@ public class SchmidMovement : MonoBehaviour
             }
         }
         else{
-            if(Seen == false) agent.speed = IdleSpeed * multiplier;            
-        }
 
+            if (Seen == false) agent.speed = IdleSpeed * multiplier;            
+        }
         agent.SetDestination(player.transform.position);
     }
 
