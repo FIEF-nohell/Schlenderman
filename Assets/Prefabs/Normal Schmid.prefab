@@ -132,12 +132,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd42fc05e12b7fb4fbae6c9f475a1510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   player: {fileID: 0}
   agent: {fileID: 38415115450622969}
   schmid: {fileID: 38415115450622975}
   multiplier: 1
-  IdleSpeed: 2.5
-  ChaseSpeed: 3.5
+  IdleSpeed: 3.2
+  ChaseSpeed: 3.7
   rayLength: 100
   rayAngle: 0
   Seen: 0
