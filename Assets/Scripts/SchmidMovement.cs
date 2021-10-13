@@ -4,8 +4,8 @@ using System.Collections;
 
 public class SchmidMovement : MonoBehaviour
 {
-    public Camera main;
-    public Camera second;
+    public GameObject main;
+    public GameObject second;
     public Rigidbody player;
     public NavMeshAgent agent;
     public GameObject schmid;
@@ -44,8 +44,8 @@ public class SchmidMovement : MonoBehaviour
     void Top3ScariestJumpscares()
     {
         jumpscare.PlayOneShot(ses);
-        second.enabled = true;
-        main.enabled = false;
+        second.SetActive(true);
+        main.SetActive(false);
         UIController.nummer = 69;
     }
 
